@@ -4,18 +4,24 @@ import ClickCounter from "./components/ClickCounter";
 import Counter from "./components/Counter";
 import HoverCounter from "./components/HoverCounter";
 import Section from "./components/Section";
-import React from "react";
+import React, { useState } from "react";
 import ThemeContext from "./contexts/themeContext";
 import Todo from "./components/Todo";
+import MyComponent from "./components/MyComponent";
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Todo />
-      </div>
-    );
-  }
+function App() {
+  const [show, setShow] = useState(true);
+
+  return (
+    <div className="app">
+      <div>{show && <MyComponent />}</div>
+      <p>
+        <button type="button" onClick={() => setShow((prevShow) => !prevShow)}>
+          {show ? "Hide post" : "Show post"}
+        </button>
+      </p>
+    </div>
+  );
 }
 
 // class App extends React.Component {
@@ -40,6 +46,7 @@ class App extends React.Component {
 //       <div>
 //         {/* <Form/> */}
 //         {/* <Calculator /> */}
+            // <Todo />
 //         <Counter>
 //           {(counter, incrementCount) => (
 //             <ClickCounter count={counter} incrementCount={incrementCount} />
