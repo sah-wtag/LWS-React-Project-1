@@ -13,7 +13,7 @@ export default function Todo() {
         <input
           type="text"
           value={title}
-          onChange={(e) => setTodo({...todo, title: e.target.value })}
+          onChange={(e) => setTodo({ ...todo, title: e.target.value })}
         />
       </p>
       <p>{description}</p>
@@ -21,7 +21,7 @@ export default function Todo() {
         <textarea
           name="text"
           value={description}
-          onChange={(e) => setTodo({...todo, description: e.target.value })}
+          onChange={(e) => setTodo({ ...todo, description: e.target.value })}
         ></textarea>
       </p>
     </div>
